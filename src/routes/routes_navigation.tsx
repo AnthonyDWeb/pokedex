@@ -5,7 +5,7 @@ import Auth from "../views/auth";
 export default function RoutesNavigation() {
 	return (
 		<Routes>
-			<Route path="/" element={<Index />} />
+			<Route path="/pokedex" element={<Index />} />
 			<Route path="/auth" element={<Auth />} />
 		</Routes>
 	);

@@ -1,26 +1,16 @@
-import React from 'react';
-import "../App.css"
-import logo from '../assets/images/pokeball.png';
-import { Link } from 'react-router-dom';
-
+import "../App.css";
+import Topbar from "../components/TopBar/topbar";
+import Bottombar from "../components/BottomBar/bottombar";
+import PokeList from "../components/PokeList/pokelist";
 
 function Index() {
-  return (
-        <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Link to={'/auth'}>- Index Pokedex -</Link>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  )
+	return (
+		<>
+			<Topbar />
+			<PokeList />
+			<Bottombar />
+		</>
+	);
 }
 
-export default Index
+export default Index;
