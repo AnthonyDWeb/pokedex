@@ -5,8 +5,8 @@ import Auth from "../views/auth";
 export default function RoutesNavigation() {
 	return (
 		<Routes>
-			<Route path="/auth" element={<Auth />} />
 			<Route path="/" element={<Index />} />
+			<Route path="/auth" element={<Auth />} />
 		</Routes>
 	);
 }
