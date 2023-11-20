@@ -8,6 +8,7 @@ function Modal({
 	pokedata: pokeprops;
 	onClick: () => void;
 }) {
+	console.log("pokedata", pokedata);
 	return (
 		<div className="modal-container">
 			<div className="modal-close-btn" onClick={onClick}>
@@ -25,7 +26,11 @@ function Modal({
 					</div>
 					<div className="modal-subcontainer modal-title.end">
 						<p className="pokecard-title-name">{pokedata.name}</p>
-						<img className="pokeball invert modal" src={pokeball_nc} alt="pokeball" />
+						<img
+							className="pokeball invert modal"
+							src={pokeball_nc}
+							alt="pokeball"
+						/>
 					</div>
 				</div>
 				<div className="modalcard modal-subcontainer">
@@ -36,11 +41,11 @@ function Modal({
 					/>
 					<div className="pokecard-stats modal">
 						<div className="pokecard-stat bottom-line">
-							<p className="pokecard-stat-name">Type:</p>
+							<p className="pokecard-stat-name">Type(s):</p>
 							<p className="pokecard-stat-value">
 								{pokedata.type.map((t: any) => (
 									<span
-										className={`${t.type.name}`}
+										className={t.type.name}
 										key={pokedata.name + t.type.name}
 									>
 										{t.type.name}
@@ -56,8 +61,12 @@ function Modal({
 							<p className="pokecard-stat-name">Weight:</p>
 							<p className="pokecard-stat-value">{pokedata.weight} lbs</p>
 						</div>
-						{pokedata.stats.map((s: any, i:number) => (
-							<div className={`pokecard-stat ${i !== pokedata.stats.length - 1 && "bottom-line"}`}>
+						{pokedata.stats.map((s: any, i: number) => (
+							<div
+								className={`pokecard-stat ${
+									i !== pokedata.stats.length - 1 && "bottom-line"
+								}`}
+							>
 								<p className="pokecard-stat-name">{s.stat.name}</p>
 								<p className="pokecard-stat-value">{s.base_stat}</p>
 							</div>

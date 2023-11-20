@@ -53,12 +53,11 @@ function PokeList() {
 		<div className="list-container">
 			<div className="list">
 				{allPokemons.map((pokemon) => (
-					<div className="row-card">
+					<div className="row-card" key={pokemon.name}>
 						{isShown && pokemon.id === selected && !isMobile && (
 							<PokeCard poke={pokemon} />
 						)}
 						<PokeRow
-							key={pokemon.name}
 							poke={pokemon}
 							show={() => {
 								setIsShown(true);
