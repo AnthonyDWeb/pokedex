@@ -14,7 +14,7 @@ function PokeCard({ poke }: { poke: pokeprops }) {
 			<img className="pokecard-img" src={poke.image} alt={poke.name} />
 			<div className="pokecard-stats">
 				<div className="pokecard-stat bottom-line">
-					<p className="pokecard-stat-name">Type(s):</p>
+					<p className="pokecard-stat-name">{poke.type.length > 1 ? "Types" : "Type"}:</p>
 					<p className="pokecard-stat-value">
 						{poke?.type?.map((t: any) => (
 							<span className={`${t.type.name}`} key={poke.name + t.type.name}>

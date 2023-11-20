@@ -41,7 +41,7 @@ function Modal({
 					/>
 					<div className="pokecard-stats modal">
 						<div className="pokecard-stat bottom-line">
-							<p className="pokecard-stat-name">Type(s):</p>
+							<p className="pokecard-stat-name">{pokedata.type.length > 1 ? "Types" : "Type"}:</p>
 							<p className="pokecard-stat-value">
 								{pokedata.type.map((t: any) => (
 									<span
