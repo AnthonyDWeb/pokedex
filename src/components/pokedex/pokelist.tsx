@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
-import "./pokelist.css";
-import PokemonCard from "../PokemonCard/pokemoncard";
+import PokeRow from "./pokerow";
 import { pokeprops } from "../../utils/other/type";
 import { getPokemondata, getPokemonsData } from "../../utils/api/fetch_data";
+import PokeCard from "./pokecard";
+import Modal from "./modal";
+import useDevice from "../../utils/hooks/useDevice";
 
 function PokeList() {
+	const { isMobile } = useDevice();
 	const [allPokemons, setAllPokemons] = useState<any[]>([]);
+	const [isShown, setIsShown] = useState(false);
+	const [selected, setSelected] = useState();
+	const [modalIsOpen, setModalIsOpen] = useState(false);
 
 	useEffect(() => {
 		allPokemons.length === 0 && getAllPokemons();
@@ -32,7 +38,7 @@ function PokeList() {
 				id: data.id.toString().padStart(3, "0"),
 				name: data.name.replace(/^./, (str: string) => str.toUpperCase()),
 				image: data.sprites.other["official-artwork"].front_default,
-				type: data.types[0].type.name,
+				type: data.types,
 				weight: data.weight,
 				height: data.height,
 				stats: data.stats,
@@ -44,13 +50,27 @@ function PokeList() {
 	};
 
 	return (
-		<div className="app-container">
-			<div className="pokemon-container">
-				<div className="all-container">
-					{allPokemons.map((pokemon) => (
-						<PokemonCard key={pokemon.name} pokedata={pokemon} />
-					))}
-				</div>
+		<div className="list-container">
+			<div className="list">
+				{allPokemons.map((pokemon) => (
+					<div className="row-card">
+						{isShown && pokemon.id === selected && !isMobile && (
+							<PokeCard poke={pokemon} />
+						)}
+						<PokeRow
+							key={pokemon.name}
+							poke={pokemon}
+							show={() => {
+								setIsShown(true);
+								setSelected(pokemon.id);
+							}}
+							handleClick={() => setModalIsOpen(true)}
+						/>
+						{modalIsOpen && pokemon.id === selected && (
+							<Modal pokedata={pokemon} onClick={() => setModalIsOpen(false)} />
+						)}
+					</div>
+				))}
 			</div>
 		</div>
 	);

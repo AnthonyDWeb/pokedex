@@ -1,27 +1,25 @@
-import "./bottombar.css";
-
 function Bottombar() {
   return (
-    <div className="bottom">
-        <div className="bottom-btn">
+    <div className="bottombar">
+        <div className="bottombar-btn">
             <p className="bg-circle-white">A</p>
-            <p>See Details</p>
+            <p className="text-btn">See Details</p>
         </div>
-        <div className="bottom-btn">
+        <div className="bottombar-btn">
             <p className="bg-circle-white">X</p>
-            <p>Habitat</p>
+            <p className="text-btn">Habitat</p>
         </div>
-        <div className="bottom-btn">
+        <div className="bottombar-btn">
             <p className="bg-circle-white">Y</p>
-            <p>Sort</p>
+            <p className="text-btn">Sort</p>
         </div>
-        <div className="bottom-btn">
+        <div className="bottombar-btn">
             <p className="bg-circle-white">+</p>
-            <p>See Evaluation</p>
+            <p className="text-btn">See Evaluation</p>
         </div>
-        <div className="bottom-btn">
+        <div className="bottombar-btn">
             <p className="bg-circle-white">B</p>
-            <p>Back</p>
+            <p className="text-btn">Back</p>
         </div>
 
     </div>
