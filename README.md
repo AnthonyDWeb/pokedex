@@ -6,4 +6,4 @@
 * Lorsque que l'on clique, cela affiche la carte du pokémon mais avec encore plus de détails ( les stats suivantes: point de vie, attaque, defense, vitesse, attaque spécial, defense spécial).
 
 ### Voir le projet
-*[Cliquez ici](https://anthonydweb.github.io/pokedex/)
+* [Cliquez ici](https://anthonydweb.github.io/pokedex/)
