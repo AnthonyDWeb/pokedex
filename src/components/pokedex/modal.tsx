@@ -1,4 +1,4 @@
-import { pokeprops } from "../../utils/other/type";
+import { pokeprops, pokestatprops, poketypeprops } from "../../utils/other/type";
 import pokeball_nc from "../../assets/images/pokeball-nc.png";
 
 function Modal({
@@ -43,7 +43,7 @@ function Modal({
 						<div className="pokecard-stat bottom-line">
 							<p className="pokecard-stat-name">{pokedata.type.length > 1 ? "Types" : "Type"}:</p>
 							<p className="pokecard-stat-value">
-								{pokedata.type.map((t: any) => (
+								{pokedata.type.map((t: poketypeprops) => (
 									<span
 										className={t.type.name}
 										key={pokedata.name + t.type.name}
@@ -61,7 +61,7 @@ function Modal({
 							<p className="pokecard-stat-name">Weight:</p>
 							<p className="pokecard-stat-value">{pokedata.weight} lbs</p>
 						</div>
-						{pokedata.stats.map((s: any, i: number) => (
+						{pokedata.stats.map((s: pokestatprops, i: number) => (
 							<div
 								className={`pokecard-stat ${
 									i !== pokedata.stats.length - 1 && "bottom-line"

@@ -8,3 +8,15 @@ export type pokeprops = {
 	height: number;
 	stats: [];
 };
+export type poketypeprops = {
+	name: string,
+	type: {
+		name: string,
+	}
+};
+export type pokestatprops = {
+	base_stat: number,
+	stat: {
+		name: string,
+	}
+};

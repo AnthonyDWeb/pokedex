@@ -1,5 +1,5 @@
 import pokeballNC from "../../assets/images/pokeball-nc.png";
-import { pokeprops } from "../../utils/other/type";
+import { pokeprops, poketypeprops } from "../../utils/other/type";
 
 function PokeCard({ poke }: { poke: pokeprops }) {
 	console.log("poke", poke);
@@ -16,7 +16,7 @@ function PokeCard({ poke }: { poke: pokeprops }) {
 				<div className="pokecard-stat bottom-line">
 					<p className="pokecard-stat-name">{poke.type.length > 1 ? "Types" : "Type"}:</p>
 					<p className="pokecard-stat-value">
-						{poke?.type?.map((t: any) => (
+						{poke?.type?.map((t: poketypeprops) => (
 							<span className={`${t.type.name}`} key={poke.name + t.type.name}>
 								{t.type.name}
 							</span>
