@@ -8,11 +8,11 @@ function Topbar() {
 				<p className="title">Pokedex</p>
 				<div className="caught-seen">
 					<div className="caught">
-						<img className="pokeball" src={pokeball} />
+						<img className="pokeball" src={pokeball} alt="pokeball"/>
 						<p>450</p>
 					</div>
 					<div className="seen">
-						<img className="pokeball" src={pokeballNC} />
+						<img className="pokeball" src={pokeballNC} alt="pokeball"/>
 						<p>649</p>
 					</div>
 				</div>

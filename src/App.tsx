@@ -5,6 +5,7 @@ import { PageContextProvider } from "./contexts/page.context";
 import RoutesNavigation from "./routes/routes_navigation";
 
 function App() {
+	console.log("render app")
 	return (
 		<BrowserRouter>
 			<AuthContextProvider>

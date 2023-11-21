@@ -8,7 +8,6 @@ function Modal({
 	pokedata: pokeprops;
 	onClick: () => void;
 }) {
-	console.log("pokedata", pokedata);
 	return (
 		<div className="modal-container">
 			<div className="modal-close-btn" onClick={onClick}>
@@ -62,7 +61,7 @@ function Modal({
 							<p className="pokecard-stat-value">{pokedata.weight} lbs</p>
 						</div>
 						{pokedata.stats.map((s: pokestatprops, i: number) => (
-							<div
+							<div key={s.stat.name}
 								className={`pokecard-stat ${
 									i !== pokedata.stats.length - 1 && "bottom-line"
 								}`}
